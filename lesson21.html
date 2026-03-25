@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NJ43JP9F');</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Aula 21: Definindo Rotas Personalizadas nos Métodos GET</title>
+
+<style>
+
+body{
+font-family:'Segoe UI',Arial,sans-serif;
+margin:0;
+background:linear-gradient(135deg,#eef2f7,#dfe7f3);
+color:#2c3e50;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:40px 20px;
+}
+
+.card{
+background:white;
+padding:40px;
+border-radius:14px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+h1{
+font-size:36px;
+text-align:center;
+margin-bottom:10px;
+color:#1c355e;
+}
+
+.subtitle{
+text-align:center;
+font-size:18px;
+color:#566573;
+margin-bottom:30px;
+}
+
+.section-title{
+font-size:24px;
+margin-top:35px;
+color:#1c355e;
+border-bottom:2px solid #e6ecf5;
+padding-bottom:10px;
+}
+
+p{
+line-height:1.8;
+margin-top:15px;
+}
+
+ul{
+line-height:1.9;
+margin-top:15px;
+}
+
+.code-box{
+background:#f4f6f9;
+padding:15px;
+border-radius:8px;
+font-family:Consolas, monospace;
+margin-top:15px;
+}
+
+.buttons{
+text-align:center;
+margin-top:35px;
+}
+
+.btn{
+display:inline-block;
+margin:10px;
+padding:14px 26px;
+border-radius:8px;
+text-decoration:none;
+font-weight:600;
+color:white;
+transition:0.25s;
+}
+
+.btn:hover{
+transform:translateY(-2px);
+box-shadow:0 5px 15px rgba(0,0,0,0.15);
+}
+
+.english{background:#2c7be5;}
+.portuguese{background:#28a745;}
+.italian{background:#f59e0b;}
+.french{background:#6f42c1;}
+.curriculum{background:#20c997;}
+
+.footer{
+text-align:center;
+margin-top:40px;
+font-size:14px;
+color:#7b8a97;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<div class="card">
+
+<h1>Aula 21: Definindo Rotas Personalizadas nos Métodos GET</h1>
+
+<p class="subtitle">
+Desenvolvimento de API REST: Construir, Testar e Solucionar Problemas
+</p>
+
+<p>
+No desenvolvimento de APIs REST, os métodos <strong>GET</strong> são usados para recuperar recursos. 
+Enquanto rotas GET padrão permitem a recuperação básica por ID ou listagem de todos os itens, 
+definir rotas personalizadas dá à sua API mais flexibilidade e poder.
+</p>
+
+<h2 class="section-title">Por que Usar Rotas GET Personalizadas?</h2>
+
+<p>
+Rotas personalizadas permitem que os clientes acessem dados específicos ou realizem consultas complexas
+sem precisar de múltiplas etapas de filtragem no lado do cliente.
+</p>
+
+<ul>
+<li>Fornecer endpoints para consultas específicas</li>
+<li>Organizar recursos de forma lógica</li>
+<li>Reduzir o processamento e filtragem de dados no lado do cliente</li>
+<li>Melhorar a usabilidade e clareza da API</li>
+</ul>
+
+<h2 class="section-title">Exemplo: Rota GET Personalizada</h2>
+
+<p>
+Suponha que você tenha uma API de produtos. Uma rota personalizada pode retornar apenas produtos ativos em uma categoria:
+</p>
+
+<div class="code-box">
+GET /api/products/active/electronics
+</div>
+
+<p>
+Aqui, <code>active</code> e <code>electronics</code> fazem parte da rota, permitindo que o servidor
+retorne os dados filtrados diretamente.
+</p>
+
+<h2 class="section-title">Implementando Rotas Personalizadas no ASP.NET Core</h2>
+
+<p>
+No ASP.NET Core, você pode definir rotas GET personalizadas usando roteamento por atributos:
+</p>
+
+<div class="code-box">
+[HttpGet("active/{category}")]
+public IActionResult GetActiveProducts(string category)
+{
+    var products = _db.Products
+                      .Where(p => p.IsActive && p.Category == category)
+                      .ToList();
+    return Ok(products);
+}
+</div>
+
+<p>
+Esta abordagem mapeia automaticamente a URL <code>/api/products/active/electronics</code> para o
+método <code>GetActiveProducts</code>.
+</p>
+
+<h2 class="section-title">Boas Práticas</h2>
+
+<ul>
+<li>Mantenha as rotas intuitivas e descritivas</li>
+<li>Use substantivos para recursos e evite verbos nos nomes das rotas</li>
+<li>Documente todas as rotas personalizadas claramente para os usuários da API</li>
+<li>Certifique-se de que os parâmetros das rotas sejam validados</li>
+</ul>
+
+<h2 class="section-title">Conclusão</h2>
+
+<p>
+Definir rotas personalizadas nos métodos GET torna sua API REST mais flexível e fácil
+para os clientes consumirem. Permite que o servidor trate consultas complexas de forma eficiente
+e mantém a estrutura da API organizada e lógica.
+</p>
+
+<div class="buttons">
+
+<a class="btn english" href="https://www.udemy.com/course/rest-api-development-build-test-troubleshoot/" target="_blank">
+View Course (English)
+</a>
+
+<a class="btn portuguese" href="https://www.udemy.com/course/desenvolvimento-de-api-rest-construir-testar-solucionar/" target="_blank">
+Ver Curso (Português)
+</a>
+
+<a class="btn italian" href="https://www.udemy.com/course/sviluppo-api-rest-costruisci-testa-risolvi/" target="_blank">
+Vedi Corso (Italiano)
+</a>
+
+<a class="btn french" href="https://www.udemy.com/course/developpement-dapi-rest-construire-tester-depanner/" target="_blank">
+Voir le cours (Français)
+</a>
+
+</div>
+
+<div class="buttons">
+
+<a class="btn curriculum" href="Contenido.html">
+Voltar para a Página do Curso
+</a>
+
+</div>
+
+<div class="footer">
+Aula 21 – Curso de Desenvolvimento de API REST.
+</div>
+
+</div>
+</div>
+
+</body>
+</html>
