@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NJ43JP9F');</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Aula 18: Restaurando um Banco de Dados com Dados Pré-carregados</title>
+
+<style>
+
+body{
+font-family:'Segoe UI',Arial,sans-serif;
+margin:0;
+background:linear-gradient(135deg,#eef2f7,#dfe7f3);
+color:#2c3e50;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:40px 20px;
+}
+
+.card{
+background:white;
+padding:40px;
+border-radius:14px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+h1{
+font-size:36px;
+text-align:center;
+margin-bottom:10px;
+color:#1c355e;
+}
+
+.subtitle{
+text-align:center;
+font-size:18px;
+color:#566573;
+margin-bottom:30px;
+}
+
+.section-title{
+font-size:24px;
+margin-top:35px;
+color:#1c355e;
+border-bottom:2px solid #e6ecf5;
+padding-bottom:10px;
+}
+
+p{
+line-height:1.8;
+margin-top:15px;
+}
+
+ul{
+line-height:1.9;
+margin-top:15px;
+}
+
+.code-box{
+background:#f4f6f9;
+padding:15px;
+border-radius:8px;
+font-family:Consolas, monospace;
+margin-top:15px;
+}
+
+.buttons{
+text-align:center;
+margin-top:35px;
+}
+
+.btn{
+display:inline-block;
+margin:10px;
+padding:14px 26px;
+border-radius:8px;
+text-decoration:none;
+font-weight:600;
+color:white;
+transition:0.25s;
+}
+
+.btn:hover{
+transform:translateY(-2px);
+box-shadow:0 5px 15px rgba(0,0,0,0.15);
+}
+
+.english{background:#2c7be5;}
+.portuguese{background:#28a745;}
+.italian{background:#f59e0b;}
+.french{background:#6f42c1;}
+.curriculum{background:#20c997;}
+
+.footer{
+text-align:center;
+margin-top:40px;
+font-size:14px;
+color:#7b8a97;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<div class="card">
+
+<h1>Aula 18: Restaurando um Banco de Dados com Dados Pré-carregados</h1>
+
+<p class="subtitle">
+Desenvolvimento de API REST: Construir, Testar e Solucionar Problemas
+</p>
+
+<p>
+No desenvolvimento de APIs REST, trabalhar com um banco de dados bem estruturado é essencial.
+Durante o desenvolvimento e testes, é frequentemente útil restaurar um banco de dados que já
+contém dados de exemplo ou pré-carregados. Isso permite que os desenvolvedores testem os endpoints
+da API sem precisar inserir registros manualmente a cada vez.
+</p>
+
+<h2 class="section-title">Por que Usar um Backup de Banco de Dados?</h2>
+
+<p>
+Um arquivo de backup de banco de dados permite que os desenvolvedores recriem rapidamente um ambiente de trabalho
+com tabelas, relacionamentos e dados de teste já configurados.
+</p>
+
+<p>Benefícios incluem:</p>
+
+<ul>
+<li>Desenvolvimento e testes mais rápidos</li>
+<li>Dados consistentes para demonstrações da API</li>
+<li>Capacidade de reproduzir problemas durante a depuração</li>
+<li>Configuração simplificada para novos desenvolvedores</li>
+</ul>
+
+<h2 class="section-title">Formato Comum de Backup de Banco de Dados</h2>
+
+<p>
+Em ambientes SQL Server, os bancos de dados são frequentemente distribuídos como arquivos de backup
+com a extensão <strong>.bak</strong>.
+</p>
+
+<div class="code-box">
+Arquivo de exemplo: RestApiSampleDatabase.bak
+</div>
+
+<p>
+Este arquivo contém a estrutura do banco de dados, tabelas, relacionamentos e
+registros pré-carregados necessários para que a API funcione corretamente.
+</p>
+
+<h2 class="section-title">Restaurando o Banco de Dados no SQL Server</h2>
+
+<p>
+Para restaurar um banco de dados usando o SQL Server Management Studio (SSMS),
+os desenvolvedores podem seguir estas etapas:
+</p>
+
+<ul>
+<li>Abra o SQL Server Management Studio</li>
+<li>Clique com o botão direito na pasta "Databases"</li>
+<li>Selecione "Restore Database"</li>
+<li>Escolha o arquivo de backup (.bak)</li>
+<li>Confirme a operação de restauração</li>
+</ul>
+
+<p>
+Após a restauração, o banco de dados se torna disponível para a API se conectar.
+</p>
+
+<h2 class="section-title">Conectando a API REST ao Banco de Dados</h2>
+
+<p>
+Após restaurar o banco de dados, a API deve ser configurada para usar a
+string de conexão correta.
+</p>
+
+<div class="code-box">
+"ConnectionStrings": {
+ "DefaultConnection":
+ "Server=localhost;Database=RestApiDB;Trusted_Connection=True;"
+}
+</div>
+
+<p>
+Esta configuração permite que a API interaja com o banco de dados restaurado
+e acesse os dados pré-carregados.
+</p>
+
+<h2 class="section-title">Testando Endpoints da API com Dados de Exemplo</h2>
+
+<p>
+Após o banco de dados ser restaurado e a API estar conectada, os desenvolvedores podem
+testar endpoints como:
+</p>
+
+<ul>
+<li>GET – Recuperar registros existentes</li>
+<li>POST – Inserir novos registros</li>
+<li>PUT – Atualizar registros</li>
+<li>DELETE – Remover registros</li>
+</ul>
+
+<p>
+Ter dados pré-carregados garante que as requisições GET retornem resultados significativos
+durante os testes.
+</p>
+
+<h2 class="section-title">Boas Práticas</h2>
+
+<ul>
+<li>Mantenha uma versão de backup limpa para desenvolvimento</li>
+<li>Documente o esquema do banco de dados</li>
+<li>Evite usar dados de produção em ambientes de desenvolvimento</li>
+<li>Atualize os arquivos de backup quando o esquema mudar</li>
+</ul>
+
+<p>
+Seguir essas práticas ajuda a manter ambientes de desenvolvimento de API
+estáveis e previsíveis.
+</p>
+
+<h2 class="section-title">Conclusão</h2>
+
+<p>
+Restaurar um banco de dados com dados pré-carregados acelera significativamente
+o desenvolvimento e testes de APIs REST. Isso garante que os desenvolvedores possam
+interagir imediatamente com dados significativos enquanto constroem e
+depuram seus endpoints.
+</p>
+
+<div class="buttons">
+
+<a class="btn english" href="https://www.udemy.com/course/rest-api-development-build-test-troubleshoot/" target="_blank">
+View Course (English)
+</a>
+
+<a class="btn portuguese" href="https://www.udemy.com/course/desenvolvimento-de-api-rest-construir-testar-solucionar/" target="_blank">
+Ver Curso (Português)
+</a>
+
+<a class="btn italian" href="https://www.udemy.com/course/sviluppo-api-rest-costruisci-testa-risolvi/" target="_blank">
+Vedi Corso (Italiano)
+</a>
+
+<a class="btn french" href="https://www.udemy.com/course/developpement-dapi-rest-construire-tester-depanner/" target="_blank">
+Voir le cours (Français)
+</a>
+
+</div>
+
+<div class="buttons">
+
+<a class="btn curriculum" href="Contenido.html">
+Voltar para a Página do Curso
+</a>
+
+</div>
+
+<div class="footer">
+Aula 18 – Curso de Desenvolvimento de API REST.
+</div>
+
+</div>
+</div>
+
+</body>
+</html>
