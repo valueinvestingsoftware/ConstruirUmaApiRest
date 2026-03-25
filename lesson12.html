@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="pt-br">
 <head>
 
 <!-- Google Tag Manager -->
@@ -12,7 +12,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Lección 12: Método GET</title>
+<title>Aula 12: Método GET</title>
 
 <style>
 
@@ -118,41 +118,41 @@ color:#7b8a97;
 <div class="container">
 <div class="card">
 
-<h1>Lección 12: Método GET</h1>
+<h1>Aula 12: Método GET</h1>
 
 <p class="subtitle">
-Desarrollo de APIs REST: Construir, Probar y Solucionar Problemas
+Desenvolvimento de API REST: Construir, Testar e Solucionar Problemas
 </p>
 
 <p>
-El método <strong>GET</strong> es uno de los métodos HTTP más utilizados en el desarrollo de APIs REST.
-Se utiliza para recuperar datos de un servidor sin modificar el recurso subyacente.
+O método <strong>GET</strong> é um dos métodos HTTP mais utilizados no desenvolvimento de APIs REST.
+Ele é usado para recuperar dados de um servidor sem modificar o recurso subjacente.
 </p>
 
 <p>
-Cuando un cliente envía una solicitud GET, el servidor procesa la solicitud y devuelve
-los datos solicitados, generalmente en formato JSON.
+Quando um cliente envia uma requisição GET, o servidor processa a requisição e retorna
+os dados solicitados, geralmente no formato JSON.
 </p>
 
-<h2 class="section-title">Propósito del Método GET</h2>
+<h2 class="section-title">Objetivo do Método GET</h2>
 
 <p>
-El propósito principal del método GET es obtener información de una API REST.
-Es una operación de solo lectura, lo que significa que no crea, actualiza ni elimina datos.
+O principal objetivo do método GET é recuperar informações de uma API REST.
+É uma operação somente de leitura, ou seja, não cria, atualiza nem exclui dados.
 </p>
 
-<p>Ejemplos comunes incluyen:</p>
+<p>Exemplos comuns incluem:</p>
 
 <ul>
-<li>Obtener una lista de productos</li>
-<li>Consultar los detalles de un cliente específico</li>
-<li>Recuperar pedidos desde una base de datos</li>
+<li>Recuperar uma lista de produtos</li>
+<li>Obter detalhes de um cliente específico</li>
+<li>Buscar pedidos de um banco de dados</li>
 </ul>
 
-<h2 class="section-title">Ejemplo de Solicitud GET</h2>
+<h2 class="section-title">Exemplo de Requisição GET</h2>
 
 <p>
-Una solicitud GET típica puede verse así:
+Uma requisição GET típica pode ser assim:
 </p>
 
 <div class="code-box">
@@ -160,13 +160,13 @@ GET /api/products
 </div>
 
 <p>
-Esta solicitud pide al servidor que devuelva una lista de todos los productos.
+Esta requisição pede ao servidor que retorne uma lista de todos os produtos.
 </p>
 
-<h2 class="section-title">Ejemplo de Respuesta GET</h2>
+<h2 class="section-title">Exemplo de Resposta GET</h2>
 
 <p>
-Si la solicitud es exitosa, el servidor puede devolver una respuesta JSON como esta:
+Se a requisição for bem-sucedida, o servidor pode retornar uma resposta JSON como esta:
 </p>
 
 <div class="code-box">
@@ -185,13 +185,13 @@ Si la solicitud es exitosa, el servidor puede devolver una respuesta JSON como e
 </div>
 
 <p>
-Esta respuesta contiene datos estructurados que la aplicación cliente puede procesar.
+Essa resposta contém dados estruturados que a aplicação cliente pode processar.
 </p>
 
-<h2 class="section-title">Solicitud GET para un Recurso Específico</h2>
+<h2 class="section-title">Requisição GET para um Recurso Específico</h2>
 
 <p>
-Una solicitud GET también puede recuperar un solo recurso especificando su identificador.
+Uma requisição GET também pode recuperar um único recurso especificando seu identificador.
 </p>
 
 <div class="code-box">
@@ -199,53 +199,52 @@ GET /api/products/1
 </div>
 
 <p>
-En este caso, el servidor devuelve únicamente el producto con ID 1.
+Nesse caso, o servidor retorna apenas o produto com ID 1.
 </p>
 
-<h2 class="section-title">Características del Método GET</h2>
+<h2 class="section-title">Características do Método GET</h2>
 
 <ul>
-<li>Se utiliza para obtener datos</li>
-<li>No modifica los recursos del servidor</li>
-<li>Puede ser almacenado en caché por los navegadores</li>
-<li>Debe ser seguro e idempotente</li>
+<li>Usado para recuperar dados</li>
+<li>Não modifica recursos do servidor</li>
+<li>Pode ser armazenado em cache por navegadores</li>
+<li>Deve ser seguro e idempotente</li>
 </ul>
 
-<h2 class="section-title">Pruebas de Solicitudes GET</h2>
+<h2 class="section-title">Testando Requisições GET</h2>
 
 <p>
-Los desarrolladores suelen probar solicitudes GET utilizando herramientas como Postman o un navegador web.
-Estas herramientas permiten enviar solicitudes directamente a los endpoints de la API y ver las respuestas.
+Desenvolvedores frequentemente testam requisições GET usando ferramentas como Postman ou um navegador web.
+Essas ferramentas permitem enviar requisições diretamente para endpoints da API e visualizar as respostas.
 </p>
 
-<p>Ejemplo de endpoint probado en Postman:</p>
+<p>Exemplo de endpoint testado no Postman:</p>
 
 <div class="code-box">
 https://localhost:5001/api/products
 </div>
 
-<h2 class="section-title">Buenas Prácticas</h2>
+<h2 class="section-title">Boas Práticas</h2>
 
 <ul>
-<li>Usar nombres de endpoints claros y descriptivos</li>
-<li>Devolver respuestas JSON estructuradas</li>
-<li>Utilizar códigos de estado HTTP adecuados</li>
-<li>Optimizar las consultas para mejorar el rendimiento</li>
+<li>Usar nomes de endpoints claros e descritivos</li>
+<li>Retornar respostas JSON estruturadas</li>
+<li>Usar códigos de status HTTP adequados</li>
+<li>Otimizar consultas para desempenho</li>
 </ul>
 
-<h2 class="section-title">Próximos Pasos</h2>
+<h2 class="section-title">Próximos Passos</h2>
 
 <p>
-Después de comprender el método GET, el siguiente paso es implementar
-otros métodos HTTP como POST, PUT y DELETE para permitir una interacción
-completa con los recursos de la API.
+Após entender o método GET, o próximo passo é implementar
+outros métodos HTTP como POST, PUT e DELETE para permitir
+interação completa com os recursos da API.
 </p>
-
 
 <div class="buttons">
 
 <a class="btn english" href="https://www.udemy.com/course/rest-api-development-build-test-troubleshoot/" target="_blank">
-Ver Curso (Inglés)
+View Course (English)
 </a>
 
 <a class="btn portuguese" href="https://www.udemy.com/course/desenvolvimento-de-api-rest-construir-testar-solucionar/" target="_blank">
@@ -253,11 +252,11 @@ Ver Curso (Português)
 </a>
 
 <a class="btn italian" href="https://www.udemy.com/course/sviluppo-api-rest-costruisci-testa-risolvi/" target="_blank">
-Ver Curso (Italiano)
+Vedi Corso (Italiano)
 </a>
 
 <a class="btn french" href="https://www.udemy.com/course/developpement-dapi-rest-construire-tester-depanner/" target="_blank">
-Ver Curso (Français)
+Voir le cours (Français)
 </a>
 
 </div>
@@ -265,13 +264,13 @@ Ver Curso (Français)
 <div class="buttons">
 
 <a class="btn curriculum" href="Contenido.html">
-Volver al Curso
+Back to Course Page
 </a>
 
 </div>
 
 <div class="footer">
-Lección 12 – Curso de Desarrollo de APIs REST.
+Aula 12 – Curso de Desenvolvimento de API REST.
 </div>
 
 </div>
