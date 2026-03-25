@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NJ43JP9F');</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lección 12: Método GET</title>
+
+<style>
+
+body{
+font-family:'Segoe UI',Arial,sans-serif;
+margin:0;
+background:linear-gradient(135deg,#eef2f7,#dfe7f3);
+color:#2c3e50;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:40px 20px;
+}
+
+.card{
+background:white;
+padding:40px;
+border-radius:14px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+h1{
+font-size:36px;
+text-align:center;
+margin-bottom:10px;
+color:#1c355e;
+}
+
+.subtitle{
+text-align:center;
+font-size:18px;
+color:#566573;
+margin-bottom:30px;
+}
+
+.section-title{
+font-size:24px;
+margin-top:35px;
+color:#1c355e;
+border-bottom:2px solid #e6ecf5;
+padding-bottom:10px;
+}
+
+p{
+line-height:1.8;
+margin-top:15px;
+}
+
+ul{
+line-height:1.9;
+margin-top:15px;
+}
+
+.code-box{
+background:#f4f6f9;
+padding:15px;
+border-radius:8px;
+font-family:Consolas, monospace;
+margin-top:15px;
+}
+
+.buttons{
+text-align:center;
+margin-top:35px;
+}
+
+.btn{
+display:inline-block;
+margin:10px;
+padding:14px 26px;
+border-radius:8px;
+text-decoration:none;
+font-weight:600;
+color:white;
+transition:0.25s;
+}
+
+.btn:hover{
+transform:translateY(-2px);
+box-shadow:0 5px 15px rgba(0,0,0,0.15);
+}
+
+.english{background:#2c7be5;}
+.portuguese{background:#28a745;}
+.italian{background:#f59e0b;}
+.french{background:#6f42c1;}
+.curriculum{background:#20c997;}
+
+.footer{
+text-align:center;
+margin-top:40px;
+font-size:14px;
+color:#7b8a97;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<div class="card">
+
+<h1>Lección 12: Método GET</h1>
+
+<p class="subtitle">
+Desarrollo de APIs REST: Construir, Probar y Solucionar Problemas
+</p>
+
+<p>
+El método <strong>GET</strong> es uno de los métodos HTTP más utilizados en el desarrollo de APIs REST.
+Se utiliza para recuperar datos de un servidor sin modificar el recurso subyacente.
+</p>
+
+<p>
+Cuando un cliente envía una solicitud GET, el servidor procesa la solicitud y devuelve
+los datos solicitados, generalmente en formato JSON.
+</p>
+
+<h2 class="section-title">Propósito del Método GET</h2>
+
+<p>
+El propósito principal del método GET es obtener información de una API REST.
+Es una operación de solo lectura, lo que significa que no crea, actualiza ni elimina datos.
+</p>
+
+<p>Ejemplos comunes incluyen:</p>
+
+<ul>
+<li>Obtener una lista de productos</li>
+<li>Consultar los detalles de un cliente específico</li>
+<li>Recuperar pedidos desde una base de datos</li>
+</ul>
+
+<h2 class="section-title">Ejemplo de Solicitud GET</h2>
+
+<p>
+Una solicitud GET típica puede verse así:
+</p>
+
+<div class="code-box">
+GET /api/products
+</div>
+
+<p>
+Esta solicitud pide al servidor que devuelva una lista de todos los productos.
+</p>
+
+<h2 class="section-title">Ejemplo de Respuesta GET</h2>
+
+<p>
+Si la solicitud es exitosa, el servidor puede devolver una respuesta JSON como esta:
+</p>
+
+<div class="code-box">
+[
+ {
+   "id": 1,
+   "name": "Laptop",
+   "price": 1200
+ },
+ {
+   "id": 2,
+   "name": "Keyboard",
+   "price": 45
+ }
+]
+</div>
+
+<p>
+Esta respuesta contiene datos estructurados que la aplicación cliente puede procesar.
+</p>
+
+<h2 class="section-title">Solicitud GET para un Recurso Específico</h2>
+
+<p>
+Una solicitud GET también puede recuperar un solo recurso especificando su identificador.
+</p>
+
+<div class="code-box">
+GET /api/products/1
+</div>
+
+<p>
+En este caso, el servidor devuelve únicamente el producto con ID 1.
+</p>
+
+<h2 class="section-title">Características del Método GET</h2>
+
+<ul>
+<li>Se utiliza para obtener datos</li>
+<li>No modifica los recursos del servidor</li>
+<li>Puede ser almacenado en caché por los navegadores</li>
+<li>Debe ser seguro e idempotente</li>
+</ul>
+
+<h2 class="section-title">Pruebas de Solicitudes GET</h2>
+
+<p>
+Los desarrolladores suelen probar solicitudes GET utilizando herramientas como Postman o un navegador web.
+Estas herramientas permiten enviar solicitudes directamente a los endpoints de la API y ver las respuestas.
+</p>
+
+<p>Ejemplo de endpoint probado en Postman:</p>
+
+<div class="code-box">
+https://localhost:5001/api/products
+</div>
+
+<h2 class="section-title">Buenas Prácticas</h2>
+
+<ul>
+<li>Usar nombres de endpoints claros y descriptivos</li>
+<li>Devolver respuestas JSON estructuradas</li>
+<li>Utilizar códigos de estado HTTP adecuados</li>
+<li>Optimizar las consultas para mejorar el rendimiento</li>
+</ul>
+
+<h2 class="section-title">Próximos Pasos</h2>
+
+<p>
+Después de comprender el método GET, el siguiente paso es implementar
+otros métodos HTTP como POST, PUT y DELETE para permitir una interacción
+completa con los recursos de la API.
+</p>
+
+
+<div class="buttons">
+
+<a class="btn english" href="https://www.udemy.com/course/rest-api-development-build-test-troubleshoot/" target="_blank">
+Ver Curso (Inglés)
+</a>
+
+<a class="btn portuguese" href="https://www.udemy.com/course/desenvolvimento-de-api-rest-construir-testar-solucionar/" target="_blank">
+Ver Curso (Português)
+</a>
+
+<a class="btn italian" href="https://www.udemy.com/course/sviluppo-api-rest-costruisci-testa-risolvi/" target="_blank">
+Ver Curso (Italiano)
+</a>
+
+<a class="btn french" href="https://www.udemy.com/course/developpement-dapi-rest-construire-tester-depanner/" target="_blank">
+Ver Curso (Français)
+</a>
+
+</div>
+
+<div class="buttons">
+
+<a class="btn curriculum" href="Contenido.html">
+Volver al Curso
+</a>
+
+</div>
+
+<div class="footer">
+Lección 12 – Curso de Desarrollo de APIs REST.
+</div>
+
+</div>
+</div>
+
+</body>
+</html>
