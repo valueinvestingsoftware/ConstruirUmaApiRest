@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NJ43JP9F');</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Aula 4: Introdução aos Fundamentos de APIs REST</title>
+
+<style>
+
+body{
+font-family:'Segoe UI',Arial,sans-serif;
+margin:0;
+background:linear-gradient(135deg,#eef2f7,#dfe7f3);
+color:#2c3e50;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:40px 20px;
+}
+
+.card{
+background:white;
+padding:40px;
+border-radius:14px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+h1{
+font-size:36px;
+text-align:center;
+margin-bottom:10px;
+color:#1c355e;
+}
+
+.subtitle{
+text-align:center;
+font-size:18px;
+color:#566573;
+margin-bottom:30px;
+}
+
+.section-title{
+font-size:24px;
+margin-top:35px;
+color:#1c355e;
+border-bottom:2px solid #e6ecf5;
+padding-bottom:10px;
+}
+
+p{
+line-height:1.8;
+margin-top:15px;
+}
+
+ul{
+line-height:1.9;
+margin-top:15px;
+}
+
+.code-box{
+background:#f4f6f9;
+padding:15px;
+border-radius:8px;
+font-family:Consolas, monospace;
+margin-top:15px;
+}
+
+.buttons{
+text-align:center;
+margin-top:35px;
+}
+
+.btn{
+display:inline-block;
+margin:10px;
+padding:14px 26px;
+border-radius:8px;
+text-decoration:none;
+font-weight:600;
+color:white;
+transition:0.25s;
+}
+
+.btn:hover{
+transform:translateY(-2px);
+box-shadow:0 5px 15px rgba(0,0,0,0.15);
+}
+
+.english{background:#2c7be5;}
+.portuguese{background:#28a745;}
+.italian{background:#f59e0b;}
+.french{background:#6f42c1;}
+.curriculum{background:#20c997;}
+
+.footer{
+text-align:center;
+margin-top:40px;
+font-size:14px;
+color:#7b8a97;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<div class="card">
+
+<h1>Aula 4: Introdução aos Fundamentos de APIs REST</h1>
+
+<p class="subtitle">
+Desenvolvimento de API REST: Construir, Testar e Solucionar Problemas
+</p>
+
+<p>
+Antes de construir uma API REST, é essencial entender os princípios fundamentais
+que definem como os sistemas baseados em REST funcionam. As APIs REST são construídas
+sobre o protocolo HTTP e fornecem uma maneira padronizada para que aplicações
+se comuniquem pela web.
+</p>
+
+<h2 class="section-title">O que significa REST?</h2>
+
+<p>
+REST significa <strong>Representational State Transfer</strong> (Transferência de Estado Representacional).
+É um estilo arquitetural que define como os sistemas devem interagir usando comunicação sem estado,
+métodos HTTP padrão e recursos estruturados.
+</p>
+
+<p>
+Na arquitetura REST, tudo é tratado como um <strong>recurso</strong>. Um recurso pode representar
+diversas coisas, como:
+</p>
+
+<ul>
+<li>Um cliente</li>
+<li>Um produto</li>
+<li>Um pedido</li>
+<li>Um registro de banco de dados</li>
+</ul>
+
+<p>
+Cada recurso é acessado por meio de uma URL única conhecida como <strong>endpoint</strong>.
+</p>
+
+<div class="code-box">
+https://api.company.com/products
+</div>
+
+<h2 class="section-title">Princípios principais das APIs REST</h2>
+
+<ul>
+<li><strong>Comunicação sem estado:</strong> Cada requisição contém todas as informações necessárias para o servidor processá-la.</li>
+<li><strong>Arquitetura cliente-servidor:</strong> O cliente cuida da interface enquanto o servidor gerencia dados e lógica.</li>
+<li><strong>Interface uniforme:</strong> As APIs seguem regras consistentes para requisições e respostas.</li>
+<li><strong>Design baseado em recursos:</strong> As APIs expõem recursos em vez de ações.</li>
+<li><strong>Uso de métodos HTTP padrão:</strong> As APIs utilizam verbos como GET, POST, PUT e DELETE.</li>
+</ul>
+
+<h2 class="section-title">Exemplo de requisição REST API</h2>
+
+<p>
+Quando uma aplicação cliente solicita dados de uma API REST, ela normalmente envia
+uma requisição HTTP para um endpoint. O servidor processa a requisição e retorna
+uma resposta, geralmente no formato JSON.
+</p>
+
+<div class="code-box">
+GET https://api.company.com/customers
+</div>
+
+<p>
+Exemplo de resposta JSON:
+</p>
+
+<div class="code-box">
+[
+ { "id": 1, "name": "Maria Lopez" },
+ { "id": 2, "name": "David Smith" }
+]
+</div>
+
+<h2 class="section-title">Por que as APIs REST são amplamente utilizadas</h2>
+
+<ul>
+<li>São simples e fáceis de implementar</li>
+<li>Funcionam em diversas linguagens de programação</li>
+<li>Integram facilmente com aplicativos móveis, sites e serviços em nuvem</li>
+<li>Utilizam protocolos HTTP padrão já suportados pela web</li>
+</ul>
+
+<p>
+Devido a essas vantagens, as APIs REST se tornaram a forma mais comum
+de aplicações trocarem dados e integrarem serviços externos.
+</p>
+
+<h2 class="section-title">O que vem a seguir</h2>
+
+<p>
+Nas próximas aulas, você explorará como o HTTP funciona em mais detalhes,
+como as APIs REST são estruturadas internamente e como começar a construir
+sua própria API usando exemplos práticos e ferramentas como Visual Studio e Postman.
+</p>
+
+<div class="buttons">
+
+<a class="btn english" href="https://www.udemy.com/course/rest-api-development-build-test-troubleshoot/" target="_blank">
+Ver Curso (Inglês)
+</a>
+
+<a class="btn portuguese" href="https://www.udemy.com/course/desenvolvimento-de-api-rest-construir-testar-solucionar/" target="_blank">
+Ver Curso (Português)
+</a>
+
+<a class="btn italian" href="https://www.udemy.com/course/sviluppo-api-rest-costruisci-testa-risolvi/" target="_blank">
+Ver Curso (Italiano)
+</a>
+
+<a class="btn french" href="https://www.udemy.com/course/developpement-dapi-rest-construire-tester-depanner/" target="_blank">
+Voir le cours (Français)
+</a>
+
+</div>
+
+<div class="buttons">
+
+<a class="btn curriculum" href="Contenido.html">
+Voltar para a página do curso
+</a>
+
+</div>
+
+<div class="footer">
+Aula 4 – Curso de Desenvolvimento de API REST.
+</div>
+
+</div>
+</div>
+
+</body>
+</html>
