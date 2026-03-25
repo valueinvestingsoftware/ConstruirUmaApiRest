@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="pt-br">
 <head>
 
 <!-- Google Tag Manager -->
@@ -12,7 +12,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Lección 13: Solución de Problemas de una API REST en Visual Studio con Postman</title>
+<title>Aula 13: Solução de Problemas em uma API REST no Visual Studio com Postman</title>
 
 <style>
 
@@ -118,139 +118,140 @@ color:#7b8a97;
 <div class="container">
 <div class="card">
 
-<h1>Lección 13: Solución de Problemas de una API REST en Visual Studio con Postman</h1>
+<h1>Aula 13: Solução de Problemas em uma API REST no Visual Studio com Postman</h1>
 
 <p class="subtitle">
-Desarrollo de APIs REST: Construir, Probar y Solucionar Problemas
+Desenvolvimento de API REST: Construir, Testar e Solucionar Problemas
 </p>
 
 <p>
-Durante el desarrollo de APIs REST, los errores y comportamientos inesperados son comunes.
-La solución de problemas (troubleshooting) es una habilidad esencial que permite a los desarrolladores
-identificar problemas rápidamente y asegurar que la API funcione correctamente.
+Durante o desenvolvimento de APIs REST, erros e comportamentos inesperados são comuns.
+A solução de problemas é uma habilidade essencial que permite aos desenvolvedores identificar
+falhas rapidamente e garantir que a API funcione corretamente.
 </p>
 
 <p>
-Dos de las herramientas más potentes para depurar y probar APIs REST son
-<strong>Visual Studio</strong> y <strong>Postman</strong>. Juntas, permiten ejecutar la API localmente,
-inspeccionar la ejecución del código y probar endpoints con solicitudes HTTP reales.
+Duas das ferramentas mais poderosas para depuração e testes de APIs REST são
+<strong>Visual Studio</strong> e <strong>Postman</strong>. Juntas, elas permitem que os desenvolvedores
+executem a API localmente, inspecionem a execução do código e testem endpoints com
+requisições HTTP reais.
 </p>
 
-<h2 class="section-title">Ejecutar la API en Visual Studio</h2>
+<h2 class="section-title">Executando a API no Visual Studio</h2>
 
 <p>
-Visual Studio permite a los desarrolladores ejecutar y depurar APIs REST directamente desde
-el entorno de desarrollo. Cuando la API se inicia, normalmente se ejecuta en un servidor local.
+O Visual Studio permite que os desenvolvedores executem e depurem APIs REST diretamente
+no ambiente de desenvolvimento. Quando a API é iniciada, ela normalmente roda em um servidor local.
 </p>
 
-<p>Ejemplo de dirección local de la API:</p>
+<p>Exemplo de endereço local da API:</p>
 
 <div class="code-box">
 https://localhost:5001
 </div>
 
 <p>
-Esta dirección puede utilizarse para probar endpoints con herramientas como Postman.
+Esse endereço pode então ser usado para testar endpoints com ferramentas como o Postman.
 </p>
 
-<h2 class="section-title">Uso de Breakpoints para Depuración</h2>
+<h2 class="section-title">Usando Breakpoints para Depuração</h2>
 
 <p>
-Una de las técnicas más útiles en Visual Studio es el uso de
-<strong>puntos de interrupción (breakpoints)</strong>.
+Uma das técnicas mais úteis de depuração no Visual Studio é o uso de
+<strong>breakpoints</strong>.
 </p>
 
 <ul>
-<li>Un breakpoint pausa la ejecución del código</li>
-<li>Permite inspeccionar variables</li>
-<li>Ayuda a identificar dónde ocurren los errores</li>
+<li>Um breakpoint pausa a execução do código</li>
+<li>Permite inspecionar variáveis</li>
+<li>Ajuda a identificar onde ocorrem erros</li>
 </ul>
 
 <p>
-Por ejemplo, colocar un breakpoint dentro de un método de controlador permite
-ver los valores exactos recibidos en una solicitud.
+Por exemplo, colocar um breakpoint dentro de um método de controller permite
+ver exatamente os valores recebidos em uma requisição.
 </p>
 
-<h2 class="section-title">Probar la API con Postman</h2>
+<h2 class="section-title">Testando a API com Postman</h2>
 
 <p>
-Postman es una herramienta muy popular para enviar solicitudes HTTP a APIs.
-Permite a los desarrolladores probar endpoints sin necesidad de una aplicación frontend.
+O Postman é uma ferramenta popular usada para enviar requisições HTTP para APIs.
+Ela permite que desenvolvedores testem endpoints sem precisar de uma aplicação frontend.
 </p>
 
-<p>Ejemplo de solicitud probada en Postman:</p>
+<p>Exemplo de requisição testada no Postman:</p>
 
 <div class="code-box">
 GET https://localhost:5001/api/products
 </div>
 
 <p>
-Después de enviar la solicitud, Postman muestra la respuesta del servidor,
-incluyendo los datos JSON y el código de estado HTTP.
+Após enviar a requisição, o Postman exibe a resposta do servidor,
+incluindo os dados JSON retornados e o código de status HTTP.
 </p>
 
-<h2 class="section-title">Problemas Comunes al Probar APIs</h2>
+<h2 class="section-title">Problemas Comuns ao Testar APIs</h2>
 
 <p>
-Al probar una API REST, los desarrolladores pueden encontrar varios problemas comunes:
-</p>
-
-<ul>
-<li>URLs de endpoint incorrectas</li>
-<li>Configuración de rutas faltante</li>
-<li>Errores de conexión a la base de datos</li>
-<li>Métodos HTTP incorrectos</li>
-<li>Problemas de serialización o formato JSON</li>
-</ul>
-
-<p>
-Identificar estos problemas a tiempo ayuda a mantener una API estable.
-</p>
-
-<h2 class="section-title">Revisión de Códigos de Estado HTTP</h2>
-
-<p>
-Postman también muestra los códigos de estado HTTP devueltos por el servidor,
-los cuales ayudan a diagnosticar problemas.
+Ao testar uma API REST, os desenvolvedores podem encontrar vários problemas comuns:
 </p>
 
 <ul>
-<li><strong>200 OK</strong> – Solicitud exitosa</li>
-<li><strong>400 Bad Request</strong> – Datos de solicitud inválidos</li>
-<li><strong>404 Not Found</strong> – Endpoint no encontrado</li>
-<li><strong>500 Internal Server Error</strong> – Error del servidor</li>
+<li>URLs de endpoints incorretas</li>
+<li>Configuração de rotas ausente</li>
+<li>Erros de conexão com o banco de dados</li>
+<li>Métodos HTTP incorretos</li>
+<li>Problemas de serialização ou formatação JSON</li>
 </ul>
 
 <p>
-Estos códigos proporcionan pistas valiosas durante la depuración.
+Identificar esses problemas cedo ajuda a manter a API estável.
 </p>
 
-<h2 class="section-title">Buenas Prácticas para Solución de Problemas</h2>
+<h2 class="section-title">Verificando Códigos de Status HTTP</h2>
+
+<p>
+O Postman também exibe os códigos de status HTTP retornados pelo servidor,
+o que ajuda a diagnosticar problemas.
+</p>
 
 <ul>
-<li>Probar los endpoints individualmente</li>
-<li>Usar breakpoints para analizar el flujo de ejecución</li>
-<li>Revisar cuidadosamente los códigos de estado HTTP</li>
-<li>Verificar las respuestas JSON</li>
-<li>Registrar errores cuando sea posible</li>
+<li><strong>200 OK</strong> – Requisição bem-sucedida</li>
+<li><strong>400 Bad Request</strong> – Dados da requisição inválidos</li>
+<li><strong>404 Not Found</strong> – Endpoint não encontrado</li>
+<li><strong>500 Internal Server Error</strong> – Erro no servidor</li>
 </ul>
 
 <p>
-Seguir estas prácticas hace que la depuración sea más rápida y eficiente.
+Esses códigos fornecem pistas valiosas durante a solução de problemas.
 </p>
 
-<h2 class="section-title">Próximos Pasos</h2>
+<h2 class="section-title">Boas Práticas para Solução de Problemas</h2>
+
+<ul>
+<li>Testar endpoints individualmente</li>
+<li>Usar breakpoints para inspecionar o fluxo de execução</li>
+<li>Verificar cuidadosamente os códigos de status HTTP</li>
+<li>Validar respostas JSON</li>
+<li>Registrar erros sempre que possível</li>
+</ul>
 
 <p>
-Después de dominar las técnicas de solución de problemas, los desarrolladores pueden
-probar y perfeccionar sus APIs REST con confianza, asegurando que los endpoints funcionen
-correctamente antes de integrarlos con aplicaciones frontend o servicios externos.
+Seguir essas práticas torna a depuração mais rápida e eficiente.
+</p>
+
+<h2 class="section-title">Próximos Passos</h2>
+
+<p>
+Após dominar as técnicas de solução de problemas, os desenvolvedores podem testar
+e aprimorar suas APIs REST com confiança, garantindo que os endpoints funcionem corretamente
+antes de integrá-los com aplicações frontend ou serviços externos.
 </p>
 
 <div class="buttons">
 
 <a class="btn english" href="https://www.udemy.com/course/rest-api-development-build-test-troubleshoot/" target="_blank">
-Ver Curso (Inglés)
+View Course (English)
 </a>
 
 <a class="btn portuguese" href="https://www.udemy.com/course/desenvolvimento-de-api-rest-construir-testar-solucionar/" target="_blank">
@@ -258,11 +259,11 @@ Ver Curso (Português)
 </a>
 
 <a class="btn italian" href="https://www.udemy.com/course/sviluppo-api-rest-costruisci-testa-risolvi/" target="_blank">
-Ver Curso (Italiano)
+Vedi Corso (Italiano)
 </a>
 
 <a class="btn french" href="https://www.udemy.com/course/developpement-dapi-rest-construire-tester-depanner/" target="_blank">
-Ver Curso (Français)
+Voir le cours (Français)
 </a>
 
 </div>
@@ -270,13 +271,13 @@ Ver Curso (Français)
 <div class="buttons">
 
 <a class="btn curriculum" href="Contenido.html">
-Volver al Curso
+Back to Course Page
 </a>
 
 </div>
 
 <div class="footer">
-Lección 13 – Curso de Desarrollo de APIs REST.
+Aula 13 – Curso de Desenvolvimento de API REST.
 </div>
 
 </div>
