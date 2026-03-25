@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NJ43JP9F');</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lecture 14: Optimizing GET Method: Returning Only Required Results</title>
+
+<style>
+
+body{
+font-family:'Segoe UI',Arial,sans-serif;
+margin:0;
+background:linear-gradient(135deg,#eef2f7,#dfe7f3);
+color:#2c3e50;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:40px 20px;
+}
+
+.card{
+background:white;
+padding:40px;
+border-radius:14px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+h1{
+font-size:36px;
+text-align:center;
+margin-bottom:10px;
+color:#1c355e;
+}
+
+.subtitle{
+text-align:center;
+font-size:18px;
+color:#566573;
+margin-bottom:30px;
+}
+
+.section-title{
+font-size:24px;
+margin-top:35px;
+color:#1c355e;
+border-bottom:2px solid #e6ecf5;
+padding-bottom:10px;
+}
+
+p{
+line-height:1.8;
+margin-top:15px;
+}
+
+ul{
+line-height:1.9;
+margin-top:15px;
+}
+
+.code-box{
+background:#f4f6f9;
+padding:15px;
+border-radius:8px;
+font-family:Consolas, monospace;
+margin-top:15px;
+}
+
+.buttons{
+text-align:center;
+margin-top:35px;
+}
+
+.btn{
+display:inline-block;
+margin:10px;
+padding:14px 26px;
+border-radius:8px;
+text-decoration:none;
+font-weight:600;
+color:white;
+transition:0.25s;
+}
+
+.btn:hover{
+transform:translateY(-2px);
+box-shadow:0 5px 15px rgba(0,0,0,0.15);
+}
+
+.english{background:#2c7be5;}
+.portuguese{background:#28a745;}
+.italian{background:#f59e0b;}
+.french{background:#6f42c1;}
+.curriculum{background:#20c997;}
+
+.footer{
+text-align:center;
+margin-top:40px;
+font-size:14px;
+color:#7b8a97;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<div class="card">
+
+<h1>Lecture 14: Optimizing GET Method: Returning Only Required Results</h1>
+
+<p class="subtitle">
+REST API Development: Build, Test, Troubleshoot
+</p>
+
+<p>
+When designing REST APIs, performance and efficiency are extremely important.
+One common optimization technique is ensuring that API endpoints return
+<strong>only the data that clients actually need</strong>.
+</p>
+
+<p>
+Returning unnecessary data increases response size, slows down applications,
+and consumes additional network resources. Optimizing GET requests helps
+create faster and more scalable APIs.
+</p>
+
+<h2 class="section-title">The Problem with Returning Too Much Data</h2>
+
+<p>
+Many APIs initially return full objects containing all available fields.
+While this may be convenient during development, it can lead to inefficient
+responses when the client only needs a few properties.
+</p>
+
+<p>Example of a large response:</p>
+
+<div class="code-box">
+{
+ "id": 1,
+ "name": "Laptop",
+ "price": 1200,
+ "description": "High performance laptop",
+ "supplier": "TechCorp",
+ "warehouseLocation": "A12",
+ "internalNotes": "Reserved stock"
+}
+</div>
+
+<p>
+If the client only needs the product name and price, returning all fields
+is unnecessary.
+</p>
+
+<h2 class="section-title">Returning Only Required Fields</h2>
+
+<p>
+A better approach is to return only the fields that are required by the client.
+This can be done using projections or data transfer objects (DTOs).
+</p>
+
+<p>Optimized response example:</p>
+
+<div class="code-box">
+{
+ "name": "Laptop",
+ "price": 1200
+}
+</div>
+
+<p>
+This smaller response reduces bandwidth usage and improves response time.
+</p>
+
+<h2 class="section-title">Optimizing Database Queries</h2>
+
+<p>
+Efficiency should also be considered when retrieving data from the database.
+Instead of loading full records and filtering afterward, it is better to
+select only the required columns directly in the query.
+</p>
+
+<div class="code-box">
+SELECT Name, Price
+FROM Products
+</div>
+
+<p>
+This reduces memory usage and improves query performance.
+</p>
+
+<h2 class="section-title">Pagination for Large Datasets</h2>
+
+<p>
+Another optimization technique for GET requests is pagination.
+Instead of returning thousands of records in a single response,
+the API returns data in smaller pages.
+</p>
+
+<p>Example request with pagination:</p>
+
+<div class="code-box">
+GET /api/products?page=1&pageSize=20
+</div>
+
+<p>
+This approach improves performance and makes APIs more scalable.
+</p>
+
+<h2 class="section-title">Benefits of Optimizing GET Requests</h2>
+
+<ul>
+<li>Faster response times</li>
+<li>Reduced bandwidth usage</li>
+<li>Improved scalability</li>
+<li>Better client-side performance</li>
+</ul>
+
+<h2 class="section-title">Best Practices</h2>
+
+<ul>
+<li>Return only necessary fields</li>
+<li>Use DTOs for response models</li>
+<li>Implement pagination for large datasets</li>
+<li>Optimize database queries</li>
+</ul>
+
+<p>
+These practices help ensure that REST APIs remain efficient,
+maintainable, and capable of handling large numbers of requests.
+</p>
+
+<h2 class="section-title">Next Steps</h2>
+
+<p>
+With optimized GET methods in place, the next step is to continue
+implementing additional HTTP methods and refining API endpoints
+to support full CRUD operations.
+</p>
+
+
+<div class="buttons">
+
+<a class="btn english" href="https://www.udemy.com/course/rest-api-development-build-test-troubleshoot/" target="_blank">
+View Course (English)
+</a>
+
+<a class="btn portuguese" href="https://www.udemy.com/course/desenvolvimento-de-api-rest-construir-testar-solucionar/" target="_blank">
+Ver Curso (Português)
+</a>
+
+<a class="btn italian" href="https://www.udemy.com/course/sviluppo-api-rest-costruisci-testa-risolvi/" target="_blank">
+Vedi Corso (Italiano)
+</a>
+
+<a class="btn french" href="https://www.udemy.com/course/developpement-dapi-rest-construire-tester-depanner/" target="_blank">
+Voir le cours (Français)
+</a>
+
+</div>
+
+<div class="buttons">
+
+<a class="btn curriculum" href="Contenido.html">
+Back to Course Page
+</a>
+
+</div>
+
+<div class="footer">
+Lecture 14 – REST API Development Course.
+</div>
+
+</div>
+</div>
+
+</body>
+</html>
