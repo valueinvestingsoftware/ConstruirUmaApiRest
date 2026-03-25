@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NJ43JP9F');</script>
+<!-- End Google Tag Manager -->
+  
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Desenvolvimento de API REST: Construir, Testar e Solucionar Problemas</title>
+
+<meta name="description" content="Aprenda a construir, testar e solucionar problemas de APIs REST usando exemplos práticos. Entenda HTTP, JSON, métodos de API e testes automatizados com Postman.">
+
+<style>
+
+body{
+font-family:'Segoe UI',Arial,sans-serif;
+margin:0;
+background:linear-gradient(135deg,#eef2f7,#dfe7f3);
+color:#2c3e50;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:40px 20px;
+}
+
+.card{
+background:white;
+padding:40px;
+border-radius:14px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+h1{
+font-size:36px;
+text-align:center;
+margin-bottom:10px;
+color:#1c355e;
+}
+
+.subtitle{
+text-align:center;
+font-size:18px;
+color:#566573;
+margin-bottom:30px;
+}
+
+.section-title{
+font-size:22px;
+margin-top:35px;
+color:#1c355e;
+}
+
+ul{
+line-height:1.8;
+}
+
+.buttons{
+text-align:center;
+margin-top:35px;
+}
+
+.btn{
+display:inline-block;
+margin:10px;
+padding:14px 26px;
+border-radius:8px;
+text-decoration:none;
+font-weight:600;
+color:white;
+transition:0.25s;
+}
+
+  .curriculum{
+background:#20c997;
+}
+  
+.btn:hover{
+transform:translateY(-2px);
+box-shadow:0 5px 15px rgba(0,0,0,0.15);
+}
+
+.english{background:#2c7be5;}
+.portuguese{background:#28a745;}
+.italian{background:#f59e0b;}
+.french{background:#6f42c1;}
+
+.footer{
+text-align:center;
+margin-top:30px;
+font-size:14px;
+color:#7b8a97;
+}
+
+</style>
+</head>
+
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJ43JP9F"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  
+<div class="container">
+
+<div class="card">
+
+<h1>Desenvolvimento de API REST: Construir, Testar e Solucionar Problemas</h1>
+
+  <div style="text-align:center; margin-bottom:20px;">
+  <img src="api_small.png" alt="Imagem API" style="max-width:300px; height:auto;">
+</div>
+  
+<p class="subtitle">
+Aprenda a construir, configurar, testar e depurar APIs REST usando exemplos práticos
+</p>
+
+<p>
+As APIs REST são a base das aplicações e serviços web modernos.  
+Neste curso, você aprenderá a projetar, desenvolver, testar e solucionar problemas de APIs REST passo a passo usando ferramentas práticas e exemplos do mundo real.
+</p>
+
+<p>
+Começando pelos fundamentos de HTTP e JSON, você construirá uma API REST totalmente funcional, entenderá como diferentes métodos HTTP funcionam e aprenderá a testar sua API usando o Postman.
+</p>
+
+<h2 class="section-title">O que você vai aprender</h2>
+
+<ul>
+<li>Os fundamentos do HTTP e da arquitetura de APIs REST</li>
+<li>Como APIs REST se comunicam usando JSON</li>
+<li>Como configurar e criar um projeto de API REST</li>
+<li>Construção de modelos e controladores para endpoints de API</li>
+<li>Entender os métodos GET, POST, PUT, DELETE e PATCH</li>
+<li>Criar rotas personalizadas e filtrar resultados da API</li>
+<li>Evitar registros duplicados em operações POST</li>
+<li>Testar APIs usando o Postman</li>
+<li>Automatizar testes de API e usar variáveis no Postman</li>
+<li>Solucionar problemas comuns em APIs REST</li>
+</ul>
+
+<h2 class="section-title">Seções do curso</h2>
+
+<ul>
+<li>Expectativas do curso e visão geral</li>
+<li>Download e instalação do software de desktop</li>
+<li>Fundamentos de APIs REST</li>
+<li>Fundamentos de HTTP e JSON</li>
+<li>Construção de modelos e controladores de API</li>
+<li>Métodos GET, POST, PUT, PATCH e DELETE</li>
+<li>Integração com banco de dados</li>
+<li>Filtragem avançada de API e regras de negócio</li>
+<li>Testes de API REST com Postman</li>
+<li>Testes automatizados de API</li>
+<li>Solução de problemas e depuração de APIs</li>
+</ul>
+
+<div class="buttons">
+
+<a class="btn english" href="https://www.udemy.com/course/rest-api-development-build-test-troubleshoot/" target="_blank">
+Ver Curso (Inglês)
+</a>
+
+<a class="btn portuguese" href="https://www.udemy.com/course/desenvolvimento-de-api-rest-construir-testar-solucionar/" target="_blank">
+Ver Curso (Português)
+</a>
+
+<a class="btn italian" href="https://www.udemy.com/course/sviluppo-api-rest-costruisci-testa-risolvi/" target="_blank">
+Ver Curso (Italiano)
+</a>
+
+<a class="btn french" href="https://www.udemy.com/course/developpement-dapi-rest-construire-tester-depanner/" target="_blank">
+Voir le cours (Français)
+</a>
+  
+</div>
+
+  <div class="buttons">
+     <p>
+Você também pode explorar o conteúdo completo do curso e as descrições detalhadas das aulas.
+</p>
+
+<a class="btn curriculum" href="Contenido.html">
+Ver currículo completo do curso
+</a> 
+  </div>
+
+  <!-- EXTRA COURSES SECTION -->
+<style>
+.extra-courses {
+   padding: 90px 20px;
+   text-align: center;
+   background: linear-gradient(135deg, #1f4037, #99f2c8);
+   color: white;
+}
+
+.extra-courses h2 {
+   font-size: 36px;
+   margin-bottom: 10px;
+}
+
+.extra-courses p {
+   font-size: 18px;
+   margin-bottom: 45px;
+   opacity: 0.9;
+}
+
+.course-buttons {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   gap: 25px;
+}
+
+.course-btn {
+   padding: 20px 34px;
+   font-size: 18px;
+   font-weight: bold;
+   color: white;
+   text-decoration: none;
+   border-radius: 16px;
+   transition: all 0.35s ease;
+   box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+   position: relative;
+   overflow: hidden;
+}
+
+.course-btn::before {
+   content: "";
+   position: absolute;
+   top: 0;
+   left: -75%;
+   width: 50%;
+   height: 100%;
+   background: rgba(255,255,255,0.3);
+   transform: skewX(-25deg);
+   transition: 0.5s;
+}
+
+.course-btn:hover::before {
+   left: 125%;
+}
+
+.course-btn:hover {
+   transform: translateY(-6px) scale(1.1);
+   box-shadow: 0 18px 40px rgba(0,0,0,0.4);
+}
+
+.btn-growth { background: linear-gradient(45deg, #ff512f, #dd2476); }
+.btn-vision { background: linear-gradient(45deg, #36d1dc, #5b86e5); }
+.btn-health { background: linear-gradient(45deg, #11998e, #38ef7d); }
+.btn-spanish { background: linear-gradient(45deg, #fc466b, #3f5efb); }
+</style>
+
+<div class="extra-courses">
+   <h2>Outros cursos muito interessantes que você deveria explorar</h2>
+   <p>Descubra mais programas poderosos projetados para melhorar sua saúde, habilidades e qualidade de vida.</p>
+
+   <div class="course-buttons">
+      <a class="course-btn btn-growth" href="https://valueinvestingsoftware.github.io/CrescimentoEmAltura/" target="_blank">
+         Programa de crescimento em altura
+      </a>
+
+      <a class="course-btn btn-vision" href="https://valueinvestingsoftware.github.io/VerClaramente/" target="_blank">
+         Melhore sua visão naturalmente
+      </a>
+
+      <a class="course-btn btn-health" href="https://valueinvestingsoftware.github.io/Psoriase/" target="_blank">
+         Guia natural para psoríase
+      </a>
+
+      <a class="course-btn btn-spanish" href="https://valueinvestingsoftware.github.io/espanhol/" target="_blank">
+         Aprenda espanhol passo a passo
+      </a>
+   </div>
+</div>
+  
+<div class="footer">
+Curso prático desenvolvido para programadores que desejam dominar o desenvolvimento e teste de APIs REST.
+</div>
+
+</div>
+</div>
+
+</body>
+</html>
