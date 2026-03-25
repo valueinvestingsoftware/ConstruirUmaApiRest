@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NJ43JP9F');</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Aula 8: Criação de Projeto de API REST</title>
+
+<style>
+
+body{
+font-family:'Segoe UI',Arial,sans-serif;
+margin:0;
+background:linear-gradient(135deg,#eef2f7,#dfe7f3);
+color:#2c3e50;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:40px 20px;
+}
+
+.card{
+background:white;
+padding:40px;
+border-radius:14px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+h1{
+font-size:36px;
+text-align:center;
+margin-bottom:10px;
+color:#1c355e;
+}
+
+.subtitle{
+text-align:center;
+font-size:18px;
+color:#566573;
+margin-bottom:30px;
+}
+
+.section-title{
+font-size:24px;
+margin-top:35px;
+color:#1c355e;
+border-bottom:2px solid #e6ecf5;
+padding-bottom:10px;
+}
+
+p{
+line-height:1.8;
+margin-top:15px;
+}
+
+ul{
+line-height:1.9;
+margin-top:15px;
+}
+
+.code-box{
+background:#f4f6f9;
+padding:15px;
+border-radius:8px;
+font-family:Consolas, monospace;
+margin-top:15px;
+}
+
+.buttons{
+text-align:center;
+margin-top:35px;
+}
+
+.btn{
+display:inline-block;
+margin:10px;
+padding:14px 26px;
+border-radius:8px;
+text-decoration:none;
+font-weight:600;
+color:white;
+transition:0.25s;
+}
+
+.btn:hover{
+transform:translateY(-2px);
+box-shadow:0 5px 15px rgba(0,0,0,0.15);
+}
+
+.english{background:#2c7be5;}
+.portuguese{background:#28a745;}
+.italian{background:#f59e0b;}
+.french{background:#6f42c1;}
+.curriculum{background:#20c997;}
+
+.footer{
+text-align:center;
+margin-top:40px;
+font-size:14px;
+color:#7b8a97;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<div class="card">
+
+<h1>Aula 8: Criação de Projeto de API REST</h1>
+
+<p class="subtitle">
+Desenvolvimento de API REST: Construir, Testar, Solucionar Problemas
+</p>
+
+<p>
+Depois de entender os fundamentos das APIs REST e configurar o ambiente de desenvolvimento,
+o próximo passo é criar o próprio projeto da API REST. Este projeto conterá a estrutura,
+controllers, modelos e configurações necessárias para expor endpoints de API que os clientes podem utilizar.
+</p>
+
+<h2 class="section-title">Criando o Projeto da API</h2>
+
+<p>
+Em muitos ambientes de desenvolvimento, como o Visual Studio, a criação de um projeto de API REST
+começa selecionando um modelo de Web API. Esse modelo gera a estrutura básica
+necessária para que a aplicação funcione como um serviço web.
+</p>
+
+<p>
+O projeto gerado normalmente inclui pastas e arquivos para:
+</p>
+
+<ul>
+<li>Controllers que lidam com requisições HTTP recebidas</li>
+<li>Modelos que representam os dados da aplicação</li>
+<li>Arquivos de configuração para roteamento e serviços</li>
+<li>Configuração de inicialização do programa</li>
+</ul>
+
+<h2 class="section-title">Estrutura Típica do Projeto</h2>
+
+<p>
+Uma estrutura típica de projeto de API REST pode ser assim:
+</p>
+
+<div class="code-box">
+/Controllers
+/Models
+/Services
+Program.cs
+appsettings.json
+</div>
+
+<p>
+Cada parte da estrutura tem um propósito específico na arquitetura
+da API REST.
+</p>
+
+<h2 class="section-title">Controllers</h2>
+
+<p>
+Os controllers são responsáveis por receber requisições HTTP e retornar
+respostas. Eles definem os endpoints com os quais os clientes interagem.
+</p>
+
+<p>
+Exemplo de endpoint dentro de um controller:
+</p>
+
+<div class="code-box">
+GET https://localhost:5001/api/products
+</div>
+
+<p>
+Esse endpoint pode retornar uma lista de produtos do banco de dados.
+</p>
+
+<h2 class="section-title">Modelos</h2>
+
+<p>
+Os modelos representam a estrutura dos dados utilizados pela aplicação.
+Por exemplo, um modelo de produto pode incluir propriedades como ID,
+nome e preço.
+</p>
+
+<div class="code-box">
+public class Product
+{
+  public int Id { get; set; }
+  public string Name { get; set; }
+  public decimal Price { get; set; }
+}
+</div>
+
+<h2 class="section-title">Arquivos de Configuração</h2>
+
+<p>
+Os arquivos de configuração armazenam definições que controlam como a API funciona.
+Isso pode incluir conexões com banco de dados, configurações de log
+e definições específicas do ambiente.
+</p>
+
+<p>
+Exemplo de configuração de conexão com banco de dados:
+</p>
+
+<div class="code-box">
+"ConnectionStrings": {
+ "DefaultConnection": "Server=localhost;Database=StoreDB;Trusted_Connection=True;"
+}
+</div>
+
+<h2 class="section-title">Testando a API Inicial</h2>
+
+<p>
+Depois que o projeto é criado, a API pode ser executada localmente.
+Ferramentas de teste como o Postman podem enviar requisições HTTP para verificar
+se a API está funcionando corretamente.
+</p>
+
+<p>
+Exemplo de requisição:
+</p>
+
+<div class="code-box">
+GET https://localhost:5001/api/products
+</div>
+
+<p>
+Se tudo estiver configurado corretamente, o servidor retornará
+uma resposta JSON contendo dados de produtos.
+</p>
+
+<h2 class="section-title">Próximos Passos</h2>
+
+<p>
+Agora que o projeto da API REST foi criado, o próximo passo
+é definir os componentes internos da API, incluindo modelos
+e controllers adicionais que irão gerenciar os dados da aplicação.
+</p>
+
+<div class="buttons">
+
+<a class="btn english" href="https://www.udemy.com/course/rest-api-development-build-test-troubleshoot/" target="_blank">
+View Course (English)
+</a>
+
+<a class="btn portuguese" href="https://www.udemy.com/course/desenvolvimento-de-api-rest-construir-testar-solucionar/" target="_blank">
+Ver Curso (Português)
+</a>
+
+<a class="btn italian" href="https://www.udemy.com/course/sviluppo-api-rest-costruisci-testa-risolvi/" target="_blank">
+Vedi Corso (Italiano)
+</a>
+
+<a class="btn french" href="https://www.udemy.com/course/developpement-dapi-rest-construire-tester-depanner/" target="_blank">
+Voir le cours (Français)
+</a>
+
+</div>
+
+<div class="buttons">
+
+<a class="btn curriculum" href="Contenido.html">
+Voltar para a Página do Curso
+</a>
+
+</div>
+
+<div class="footer">
+Aula 8 – Curso de Desenvolvimento de API REST.
+</div>
+
+</div>
+</div>
+
+</body>
+</html>
