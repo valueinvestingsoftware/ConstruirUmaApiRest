@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NJ43JP9F');</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Aula 9: Entendendo os Componentes de uma REST API</title>
+
+<style>
+
+body{
+font-family:'Segoe UI',Arial,sans-serif;
+margin:0;
+background:linear-gradient(135deg,#eef2f7,#dfe7f3);
+color:#2c3e50;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:40px 20px;
+}
+
+.card{
+background:white;
+padding:40px;
+border-radius:14px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+h1{
+font-size:36px;
+text-align:center;
+margin-bottom:10px;
+color:#1c355e;
+}
+
+.subtitle{
+text-align:center;
+font-size:18px;
+color:#566573;
+margin-bottom:30px;
+}
+
+.section-title{
+font-size:24px;
+margin-top:35px;
+color:#1c355e;
+border-bottom:2px solid #e6ecf5;
+padding-bottom:10px;
+}
+
+p{
+line-height:1.8;
+margin-top:15px;
+}
+
+ul{
+line-height:1.9;
+margin-top:15px;
+}
+
+.code-box{
+background:#f4f6f9;
+padding:15px;
+border-radius:8px;
+font-family:Consolas, monospace;
+margin-top:15px;
+}
+
+.buttons{
+text-align:center;
+margin-top:35px;
+}
+
+.btn{
+display:inline-block;
+margin:10px;
+padding:14px 26px;
+border-radius:8px;
+text-decoration:none;
+font-weight:600;
+color:white;
+transition:0.25s;
+}
+
+.btn:hover{
+transform:translateY(-2px);
+box-shadow:0 5px 15px rgba(0,0,0,0.15);
+}
+
+.english{background:#2c7be5;}
+.portuguese{background:#28a745;}
+.italian{background:#f59e0b;}
+.french{background:#6f42c1;}
+.curriculum{background:#20c997;}
+
+.footer{
+text-align:center;
+margin-top:40px;
+font-size:14px;
+color:#7b8a97;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<div class="card">
+
+<h1>Aula 9: Entendendo os Componentes de uma REST API</h1>
+
+<p class="subtitle">
+Desenvolvimento de REST API: Construir, Testar, Solucionar Problemas
+</p>
+
+<p>
+Uma REST API é composta por vários componentes principais que trabalham juntos
+para permitir que aplicações se comuniquem pela web. Compreender esses componentes
+é essencial para projetar APIs claras, fáceis de manter e escaláveis.
+</p>
+
+<h2 class="section-title">Recursos</h2>
+
+<p>
+Na arquitetura REST, um recurso representa um dado que pode ser acessado
+por um cliente. Os recursos geralmente são representados por substantivos
+e expostos por meio de URLs.
+</p>
+
+<p>Exemplo de endpoint de recurso:</p>
+
+<div class="code-box">
+https://api.example.com/products
+</div>
+
+<p>
+Neste exemplo, <strong>products</strong> é o recurso que está sendo acessado.
+</p>
+
+<h2 class="section-title">Métodos HTTP</h2>
+
+<p>
+As REST APIs utilizam métodos HTTP para definir o tipo de operação realizada
+sobre um recurso.
+</p>
+
+<ul>
+<li><strong>GET</strong> – Recuperar dados</li>
+<li><strong>POST</strong> – Criar um novo recurso</li>
+<li><strong>PUT</strong> – Atualizar um recurso existente</li>
+<li><strong>DELETE</strong> – Remover um recurso</li>
+</ul>
+
+<p>Exemplo de requisição:</p>
+
+<div class="code-box">
+GET /api/products
+</div>
+
+<p>
+Essa requisição retorna uma lista de produtos do servidor.
+</p>
+
+<h2 class="section-title">Endpoints</h2>
+
+<p>
+Um endpoint é uma URL específica onde uma API pode ser acessada.
+Cada endpoint representa um recurso ou uma operação específica.
+</p>
+
+<p>Exemplos de endpoints:</p>
+
+<div class="code-box">
+GET /api/products  
+GET /api/products/10  
+POST /api/products
+</div>
+
+<p>
+Cada endpoint executa uma ação diferente sobre o mesmo recurso.
+</p>
+
+<h2 class="section-title">Requisição e Resposta</h2>
+
+<p>
+A comunicação entre um cliente e uma REST API acontece por meio
+de requisições e respostas HTTP.
+</p>
+
+<p>
+Uma requisição normalmente contém:
+</p>
+
+<ul>
+<li>Método HTTP</li>
+<li>URL do endpoint</li>
+<li>Headers</li>
+<li>Corpo opcional (para requisições POST ou PUT)</li>
+</ul>
+
+<p>
+O servidor processa a requisição e retorna uma resposta,
+geralmente no formato JSON.
+</p>
+
+<div class="code-box">
+{
+ "id": 5,
+ "name": "Laptop",
+ "price": 1200
+}
+</div>
+
+<h2 class="section-title">Códigos de Status</h2>
+
+<p>
+Os códigos de status HTTP indicam o resultado de uma requisição.
+</p>
+
+<ul>
+<li><strong>200 OK</strong> – Requisição bem-sucedida</li>
+<li><strong>201 Created</strong> – Recurso criado com sucesso</li>
+<li><strong>400 Bad Request</strong> – Requisição inválida</li>
+<li><strong>404 Not Found</strong> – Recurso não encontrado</li>
+<li><strong>500 Internal Server Error</strong> – Erro no servidor</li>
+</ul>
+
+<h2 class="section-title">Por Que Entender os Componentes é Importante</h2>
+
+<p>
+Quando os desenvolvedores compreendem claramente esses componentes,
+eles podem projetar APIs mais fáceis de usar, manter e integrar com outros sistemas.
+</p>
+
+<p>
+Uma REST API bem estruturada permite que diferentes aplicações, serviços
+e dispositivos se comuniquem de forma confiável usando protocolos padrão da web.
+</p>
+
+<h2 class="section-title">Próximos Passos</h2>
+
+<p>
+Agora que entendemos os principais componentes de uma REST API,
+o próximo passo é começar a implementar esses conceitos dentro do projeto,
+criando controllers e endpoints que exponham recursos reais.
+</p>
+
+
+<div class="buttons">
+
+<a class="btn english" href="https://www.udemy.com/course/rest-api-development-build-test-troubleshoot/" target="_blank">
+View Course (English)
+</a>
+
+<a class="btn portuguese" href="https://www.udemy.com/course/desenvolvimento-de-api-rest-construir-testar-solucionar/" target="_blank">
+Ver Curso (Português)
+</a>
+
+<a class="btn italian" href="https://www.udemy.com/course/sviluppo-api-rest-costruisci-testa-risolvi/" target="_blank">
+Vedi Corso (Italiano)
+</a>
+
+<a class="btn french" href="https://www.udemy.com/course/developpement-dapi-rest-construire-tester-depanner/" target="_blank">
+Voir le cours (Français)
+</a>
+
+</div>
+
+<div class="buttons">
+
+<a class="btn curriculum" href="Contenido.html">
+Voltar para a Página do Curso
+</a>
+
+</div>
+
+<div class="footer">
+Aula 9 – Curso de Desenvolvimento de REST API.
+</div>
+
+</div>
+</div>
+
+</body>
+</html>
